@@ -23,8 +23,8 @@ extension AbstractRequestFactory {
     @discardableResult
     public func request<T: Decodable>( request: URLRequestConvertible, completionHandler: @escaping (AFDataResponse<T>) -> Void) -> DataRequest {
         
-    return sessionManager
-        .request(request)
-        .responseCodable(errorParser: errorParser, queue: queue, completionHandler: completionHandler)
+        return sessionManager
+            .request(request)
+            .responseCodable(errorParser: errorParser, queue: queue, completionHandler: completionHandler)
     }
 }
