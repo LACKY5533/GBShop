@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let auth = requestFactory.makeAuthRequestFactory()
+        let auth = requestFactory.makeAuthRequestFatory()
         
         auth.login(userName: "Somebody", password: "mypassword") { response in
             

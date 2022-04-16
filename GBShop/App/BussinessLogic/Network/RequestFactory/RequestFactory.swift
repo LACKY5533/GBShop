@@ -9,33 +9,36 @@ import Foundation
 import Alamofire
 
 class RequestFactory {
+    
     func makeErrorParser() -> AbstractErrorParser {
         return ErrorParser()
     }
     
     lazy var commonSession: Session = {
+        
         let configuration = URLSessionConfiguration.default
         configuration.httpShouldSetCookies = false
         configuration.headers = .default
         let manager = Session(configuration: configuration)
+        
         return manager
     }()
     
     let sessionQueue = DispatchQueue.global(qos: .utility)
     
-    func makeAuthRequestFactory() -> AuthRequestFactory {
+    func makeAuthRequestFatory() -> AuthRequestFactory {
         let errorParser = makeErrorParser()
         return Auth(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
     
-    func makeSignupRequestFactory() -> SignUpRequestFactory {
+    func makeSignUpRequestFactory() -> SignUpRequestFactory {
         let errorParser = makeErrorParser()
-        return Signup(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+        return SignUp(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
     
-    func makeChangeUserDataRequestFactory() -> ChangeUserPersonalDataRequestFactory {
+    func makeChangePersonalDataRequestFactory() -> ChangeUserPersonalDataRequestFactory {
         let errorParser = makeErrorParser()
-        return ChangeUserData(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+        return ChangePersonalData(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
     
     func makeLogoutRequestFactory() -> LogoutRequestFactory {
@@ -43,18 +46,13 @@ class RequestFactory {
         return Logout(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
     
-    func makeGetCatalogRequestFactory() -> CatalogRequestFactory {
+    func makeCatalogRequestFactory() -> CatalogRequestFactory {
         let errorParser = makeErrorParser()
         return Catalog(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
     
-    func makeGetProductRequestFactory() -> ProductRequestFactory {
+    func makeProductRequestFactory() -> ProductRequestFactory {
         let errorParser = makeErrorParser()
         return Product(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
-    }
-    
-    func makeReviewRequestFactory() -> ReviewRequestFactory {
-        let errorParser = makeErrorParser()
-        return Reviews(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
 }

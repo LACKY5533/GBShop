@@ -9,5 +9,5 @@ import Foundation
 import Alamofire
 
 protocol ChangeUserPersonalDataRequestFactory {
-    func changeUserPersonalData(user: User, completionHandler: @escaping (AFDataResponse<CommonResult>) -> Void)
+    func changeUserPersonalData(user: User, completionHandler: @escaping (AFDataResponse<ChangeUserPersonalDataResult>) -> Void)
 }
