@@ -23,19 +23,8 @@ class ChangeUserPersonalDataViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    private func showError(_ errorMessage: String) {
-        let alert = UIAlertController(title: "Ошибка сервера", message: errorMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    private func moveToMainMenu() {
-        let vc = R.Storyboard.MainMenu.instantiateInitialViewController()
-        vc!.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
-    }
-    
     @IBAction func changeButton(_ sender: Any) {
+        guard isFormFilled() else { return self.showFillError() }
         
         let factory = requestFactory.makeChangeUserDataRequestFactory()
         let user = User(id: 123,
@@ -62,4 +51,33 @@ class ChangeUserPersonalDataViewController: UIViewController {
         vc!.modalPresentationStyle = .fullScreen
         self.present(vc!, animated: true)
     }
+    
+    private func moveToMainMenu() {
+        let vc = R.Storyboard.MainMenu.instantiateInitialViewController()
+        vc!.modalPresentationStyle = .fullScreen
+        self.present(vc!, animated: true)
+    }
+    
+    private func showError(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Ошибка сервера", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showFillError() {
+        let alert = UIAlertController(title: "Вы не заполнили поля", message: "Нужно заполнить все поля", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func isFormFilled() -> Bool {
+            guard nameTextField.text != "",
+                  lastNameTextField.text != "",
+                  emailTextField.text != "",
+                  loginTextField.text != "",
+                  passwordTextField.text != "" else {
+                      return false
+                  }
+            return true
+        }
 }

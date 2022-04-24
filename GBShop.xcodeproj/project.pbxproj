@@ -22,6 +22,10 @@
 		871320B127EDD7310049BA3A /* GBShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871320B027EDD7310049BA3A /* GBShopTests.swift */; };
 		871320BB27EDD7310049BA3A /* GBShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871320BA27EDD7310049BA3A /* GBShopUITests.swift */; };
 		871320BD27EDD7310049BA3A /* GBShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871320BC27EDD7310049BA3A /* GBShopUITestsLaunchTests.swift */; };
+		872FD3B82815650600A4EE42 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FD3B72815650600A4EE42 /* CatalogViewController.swift */; };
+		872FD3BA2815655300A4EE42 /* Catalog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872FD3B92815655300A4EE42 /* Catalog.storyboard */; };
+		872FD3BE28156F8A00A4EE42 /* CatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FD3BC28156F8A00A4EE42 /* CatalogTableViewCell.swift */; };
+		872FD3BF28156F8A00A4EE42 /* CatalogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 872FD3BD28156F8A00A4EE42 /* CatalogTableViewCell.xib */; };
 		873D1A1A27F733C40053E17D /* RequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D1A1927F733C40053E17D /* RequestTest.swift */; };
 		873D1A1C27F735980053E17D /* ResponseCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D1A1B27F735980053E17D /* ResponseCodableTests.swift */; };
 		877AF1CE280B021F00DD24EA /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AF1CD280B021F00DD24EA /* R.swift */; };
@@ -97,6 +101,10 @@
 		871320B627EDD7310049BA3A /* GBShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		871320BA27EDD7310049BA3A /* GBShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopUITests.swift; sourceTree = "<group>"; };
 		871320BC27EDD7310049BA3A /* GBShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		872FD3B72815650600A4EE42 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		872FD3B92815655300A4EE42 /* Catalog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Catalog.storyboard; sourceTree = "<group>"; };
+		872FD3BC28156F8A00A4EE42 /* CatalogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewCell.swift; sourceTree = "<group>"; };
+		872FD3BD28156F8A00A4EE42 /* CatalogTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogTableViewCell.xib; sourceTree = "<group>"; };
 		873D1A1927F733C40053E17D /* RequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
 		873D1A1B27F735980053E17D /* ResponseCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodableTests.swift; sourceTree = "<group>"; };
 		877AF1CD280B021F00DD24EA /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
@@ -167,6 +175,7 @@
 				870FB5BF280B39E100F3EF71 /* MainMenuViewController.swift */,
 				870FB5C3280B3B1000F3EF71 /* SignUpViewController.swift */,
 				870FB5C7280B50F800F3EF71 /* ChangeUserPersonalDataViewController.swift */,
+				872FD3B72815650600A4EE42 /* CatalogViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +187,7 @@
 				870FB5BD280B34A000F3EF71 /* MainMenu.storyboard */,
 				870FB5C1280B3A5600F3EF71 /* SignUp.storyboard */,
 				870FB5C5280B501300F3EF71 /* ChancgeUserPersonalData.storyboard */,
+				872FD3B92815655300A4EE42 /* Catalog.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -230,6 +240,15 @@
 				871320BC27EDD7310049BA3A /* GBShopUITestsLaunchTests.swift */,
 			);
 			path = GBShopUITests;
+			sourceTree = "<group>";
+		};
+		872FD3BB28156F6D00A4EE42 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				872FD3BC28156F8A00A4EE42 /* CatalogTableViewCell.swift */,
+				872FD3BD28156F8A00A4EE42 /* CatalogTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		873D1A1727F72C000053E17D /* RequestFactory */ = {
@@ -327,6 +346,7 @@
 			children = (
 				870FB5BB280B339600F3EF71 /* Controllers */,
 				870FB5BC280B33AD00F3EF71 /* Storyboards */,
+				872FD3BB28156F6D00A4EE42 /* Cells */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -459,11 +479,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				870FB5BE280B34A100F3EF71 /* MainMenu.storyboard in Resources */,
+				872FD3BA2815655300A4EE42 /* Catalog.storyboard in Resources */,
 				870FB5C6280B501300F3EF71 /* ChancgeUserPersonalData.storyboard in Resources */,
 				871320A627EDD7310049BA3A /* LaunchScreen.storyboard in Resources */,
 				871320A327EDD7310049BA3A /* Assets.xcassets in Resources */,
 				871320A127EDD72E0049BA3A /* Main.storyboard in Resources */,
 				870FB5C2280B3A5600F3EF71 /* SignUp.storyboard in Resources */,
+				872FD3BF28156F8A00A4EE42 /* CatalogTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872FD3B82815650600A4EE42 /* CatalogViewController.swift in Sources */,
 				87ED42E327F1165800980D74 /* ChangeUserPersonalData.swift in Sources */,
 				877EAE0B27F088F2006A7AD9 /* SignUpResult.swift in Sources */,
 				877EAE0527F08467006A7AD9 /* AuthRequestFactory.swift in Sources */,
@@ -511,6 +534,7 @@
 				87A9175E28032000009617F7 /* CartRequestFactory.swift in Sources */,
 				87FA010827F7B4F20069C3D4 /* CatalogResult.swift in Sources */,
 				870FB5C8280B50F800F3EF71 /* ChangeUserPersonalDataViewController.swift in Sources */,
+				872FD3BE28156F8A00A4EE42 /* CatalogTableViewCell.swift in Sources */,
 				877EAE0F27F08A51006A7AD9 /* ChangeUserPersonalDataResult.swift in Sources */,
 				877EAE0027F083DF006A7AD9 /* LoginResult.swift in Sources */,
 				87A9175C28031FD8009617F7 /* ReviewRequestFactory.swift in Sources */,

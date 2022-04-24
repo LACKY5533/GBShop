@@ -9,10 +9,14 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func CatalogButton(_ sender: Any) {
+        let vc = R.Storyboard.Catalog.instantiateInitialViewController() as! CatalogViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     @IBAction func changeUserPersonalDataButton(_ sender: Any) {
