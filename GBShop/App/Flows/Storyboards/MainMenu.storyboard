@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyR-kD-Fpm">
-                                <rect key="frame" x="132.5" y="581" width="149" height="31"/>
+                                <rect key="frame" x="132.5" y="446" width="149" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Выйти из системы"/>
                                 <connections>
@@ -24,21 +24,31 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7i-qI-yaY">
-                                <rect key="frame" x="116.5" y="510" width="181" height="31"/>
+                                <rect key="frame" x="116.5" y="395" width="181" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Изменить свои данные"/>
                                 <connections>
                                     <action selector="changeUserPersonalDataButton:" destination="qC5-lS-LRG" eventType="touchUpInside" id="ZGt-0G-GE0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ne-aK-kHw">
+                                <rect key="frame" x="168" y="344" width="78" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Каталог"/>
+                                <connections>
+                                    <action selector="CatalogButton:" destination="qC5-lS-LRG" eventType="touchUpInside" id="SYu-YO-dnt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FEF-9v-8m4"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wyR-kD-Fpm" firstAttribute="top" secondItem="M7i-qI-yaY" secondAttribute="bottom" constant="40" id="SW2-ki-OKg"/>
-                            <constraint firstItem="wyR-kD-Fpm" firstAttribute="centerX" secondItem="8x0-e7-fuc" secondAttribute="centerX" id="YRG-Ik-1b9"/>
-                            <constraint firstItem="FEF-9v-8m4" firstAttribute="bottom" secondItem="wyR-kD-Fpm" secondAttribute="bottom" constant="250" id="rVT-xU-ayA"/>
-                            <constraint firstItem="M7i-qI-yaY" firstAttribute="centerX" secondItem="8x0-e7-fuc" secondAttribute="centerX" id="zRB-Uj-O1h"/>
+                            <constraint firstItem="wyR-kD-Fpm" firstAttribute="centerX" secondItem="8x0-e7-fuc" secondAttribute="centerX" id="4b4-XX-TAF"/>
+                            <constraint firstItem="M7i-qI-yaY" firstAttribute="top" secondItem="6ne-aK-kHw" secondAttribute="bottom" constant="20" id="MAa-59-RbT"/>
+                            <constraint firstItem="wyR-kD-Fpm" firstAttribute="top" secondItem="M7i-qI-yaY" secondAttribute="bottom" constant="20" id="MbE-dG-Axl"/>
+                            <constraint firstItem="M7i-qI-yaY" firstAttribute="centerX" secondItem="8x0-e7-fuc" secondAttribute="centerX" id="OjK-rZ-cyY"/>
+                            <constraint firstItem="6ne-aK-kHw" firstAttribute="top" secondItem="FEF-9v-8m4" secondAttribute="top" constant="300" id="h2L-V0-m45"/>
+                            <constraint firstItem="6ne-aK-kHw" firstAttribute="centerX" secondItem="8x0-e7-fuc" secondAttribute="centerX" id="hTG-3q-hZy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="t1P-5f-o3u"/>
