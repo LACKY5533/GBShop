@@ -14,20 +14,19 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func CatalogButton(_ sender: Any) {
-        let vc = R.Storyboard.Catalog.instantiateInitialViewController() as! CatalogViewController
+        guard let vc = R.Storyboard.Catalog.instantiateInitialViewController() else { return }
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
     
     @IBAction func changeUserPersonalDataButton(_ sender: Any) {
-        let vc = R.Storyboard.ChangeUserPersonalDataButton.instantiateInitialViewController()
-        vc!.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        guard let vc = R.Storyboard.ChangeUserPersonalData.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     @IBAction func backToAuthButton(_ sender: Any) {
-        let vc = R.Storyboard.Auth.instantiateInitialViewController()
-        vc!.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
-    }
+        guard let vc = R.Storyboard.Auth.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)    }
 }

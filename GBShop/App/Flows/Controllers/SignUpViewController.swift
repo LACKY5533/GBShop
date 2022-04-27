@@ -45,9 +45,9 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func backToAuthButton(_ sender: Any) {
-        let vc = R.Storyboard.Auth.instantiateInitialViewController()
-        vc!.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        guard let vc = R.Storyboard.Auth.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     private func moveToMainMenu() {

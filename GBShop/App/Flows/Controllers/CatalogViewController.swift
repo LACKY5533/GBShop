@@ -32,8 +32,14 @@ class CatalogViewController: UITableViewController {
         (cell as? CatalogTableViewCell)?.configure(with: self.CatalogItem[indexPath.row])
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = R.Storyboard.Product.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
     @IBAction func backToMainMenuButton(_ sender: Any) {
-        let vc = R.Storyboard.MainMenu.instantiateInitialViewController() as! MainMenuViewController
+        guard let vc = R.Storyboard.MainMenu.instantiateInitialViewController() else { return }
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
