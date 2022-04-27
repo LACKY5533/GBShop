@@ -11,17 +11,20 @@ enum R {
     
     enum Storyboard {
         static let MainMenu: UIStoryboard = .init(name: "MainMenu", bundle: nil)
-        static let ChangeUserPersonalDataButton: UIStoryboard = .init(name: "ChangeUserPersonalData", bundle: nil)
+        static let ChangeUserPersonalData: UIStoryboard = .init(name: "ChangeUserPersonalData", bundle: nil)
         static let SignUp: UIStoryboard = .init(name: "SignUp", bundle: nil)
         static let Auth: UIStoryboard = .init(name: "Main", bundle: nil)
         static let Catalog: UIStoryboard = .init(name: "Catalog", bundle: nil)
+        static let Product: UIStoryboard = .init(name: "Product", bundle: nil)
     }
     
     enum Nib {
         static let catalog:UINib = .init(nibName: "CatalogTableViewCell", bundle: nil)
+        static let product:UINib = .init(nibName: "ProductTableViewCell", bundle: nil)
     }
     
     enum Cell {
         static let catalog: String = "CatalogCell"
+        static let product: String = "ProductCell"
     }
 }

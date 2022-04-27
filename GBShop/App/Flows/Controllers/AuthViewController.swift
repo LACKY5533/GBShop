@@ -34,15 +34,15 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: Any) {
-        let vc = R.Storyboard.SignUp.instantiateInitialViewController()
-        vc!.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        guard let vc = R.Storyboard.SignUp.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     private func moveToMainMenu() {
-        let vc = R.Storyboard.MainMenu.instantiateInitialViewController()
-        vc!.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        guard let vc = R.Storyboard.MainMenu.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     private func showError(_ errorMessage: String) {
