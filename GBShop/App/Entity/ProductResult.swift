@@ -18,3 +18,12 @@ struct ProductResult: Codable {
         case result
     }
 }
+
+struct ProductResponse: Codable {
+    let result: Int?
+    let productId: Int?
+    let productName: String?
+    let price: Int?
+    let description: String?
+    let picUrl: String?
+}

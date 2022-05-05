@@ -25,7 +25,7 @@ class Product: AbstractRequestFactory {
 }
 
 extension Product: ProductRequestFactory {
-    func product(productId: Int, completionHandler: @escaping (AFDataResponse<ProductResult>) -> Void) {
+    func product(productId: Int, completionHandler: @escaping (AFDataResponse<ProductResponse>) -> Void) {
         let requestModel = Product(baseUrl: baseUrl, productId: productId)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
@@ -34,8 +34,8 @@ extension Product: ProductRequestFactory {
 extension Product {
     struct Product: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "getGoodById.json"
+        let method: HTTPMethod = .post
+        let path: String = "product"
         let productId: Int
         var parameters: Parameters? {
             return [

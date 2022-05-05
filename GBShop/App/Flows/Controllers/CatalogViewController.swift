@@ -12,7 +12,7 @@ class CatalogViewController: UITableViewController {
     @IBOutlet var tableVIew: UITableView!
     
     let requestFactory = RequestFactory()
-    var CatalogItem: [CatalogResult] = []
+    var CatalogItem: [CatalogResponse] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,4 +44,9 @@ class CatalogViewController: UITableViewController {
         self.present(vc, animated: true)
     }
     
+    @IBAction func CartButton(_ sender: Any) {
+        guard let vc = R.Storyboard.Cart.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
 }

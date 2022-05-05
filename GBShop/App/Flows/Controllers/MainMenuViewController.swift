@@ -29,4 +29,10 @@ class MainMenuViewController: UIViewController {
         guard let vc = R.Storyboard.Auth.instantiateInitialViewController() else { return }
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)    }
+    
+    @IBAction func CartButton(_ sender: Any) {
+        guard let vc = R.Storyboard.Cart.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
 }
