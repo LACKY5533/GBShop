@@ -31,6 +31,13 @@
 		872FD3BA2815655300A4EE42 /* Catalog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872FD3B92815655300A4EE42 /* Catalog.storyboard */; };
 		872FD3BE28156F8A00A4EE42 /* CatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FD3BC28156F8A00A4EE42 /* CatalogTableViewCell.swift */; };
 		872FD3BF28156F8A00A4EE42 /* CatalogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 872FD3BD28156F8A00A4EE42 /* CatalogTableViewCell.xib */; };
+		873A15AD282D7140007E3B38 /* AnalyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A15AC282D7140007E3B38 /* AnalyticsLogger.swift */; };
+		873A15B0282D72B9007E3B38 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 873A15AF282D72B9007E3B38 /* FirebaseAnalytics */; };
+		873A15B2282D72B9007E3B38 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 873A15B1282D72B9007E3B38 /* FirebaseCrashlytics */; };
+		873A15B4282D72B9007E3B38 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 873A15B3282D72B9007E3B38 /* FirebaseDatabase */; };
+		873A15B7282D75B1007E3B38 /* CartSinglton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A15B6282D75B1007E3B38 /* CartSinglton.swift */; };
+		873A15B9282D76C3007E3B38 /* ProductSinglton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A15B8282D76C3007E3B38 /* ProductSinglton.swift */; };
+		873A15BB282D76EF007E3B38 /* UserSinglton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A15BA282D76EF007E3B38 /* UserSinglton.swift */; };
 		873D1A1A27F733C40053E17D /* RequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D1A1927F733C40053E17D /* RequestTest.swift */; };
 		873D1A1C27F735980053E17D /* ResponseCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D1A1B27F735980053E17D /* ResponseCodableTests.swift */; };
 		877AF1CE280B021F00DD24EA /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AF1CD280B021F00DD24EA /* R.swift */; };
@@ -119,6 +126,10 @@
 		872FD3B92815655300A4EE42 /* Catalog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Catalog.storyboard; sourceTree = "<group>"; };
 		872FD3BC28156F8A00A4EE42 /* CatalogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewCell.swift; sourceTree = "<group>"; };
 		872FD3BD28156F8A00A4EE42 /* CatalogTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogTableViewCell.xib; sourceTree = "<group>"; };
+		873A15AC282D7140007E3B38 /* AnalyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsLogger.swift; sourceTree = "<group>"; };
+		873A15B6282D75B1007E3B38 /* CartSinglton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSinglton.swift; sourceTree = "<group>"; };
+		873A15B8282D76C3007E3B38 /* ProductSinglton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSinglton.swift; sourceTree = "<group>"; };
+		873A15BA282D76EF007E3B38 /* UserSinglton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSinglton.swift; sourceTree = "<group>"; };
 		873D1A1927F733C40053E17D /* RequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
 		873D1A1B27F735980053E17D /* ResponseCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodableTests.swift; sourceTree = "<group>"; };
 		877AF1CD280B021F00DD24EA /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
@@ -165,6 +176,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				873A15B2282D72B9007E3B38 /* FirebaseCrashlytics in Frameworks */,
+				873A15B0282D72B9007E3B38 /* FirebaseAnalytics in Frameworks */,
+				873A15B4282D72B9007E3B38 /* FirebaseDatabase in Frameworks */,
 				877EADF827F07F4A006A7AD9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +306,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		873A15B5282D757B007E3B38 /* Singltons */ = {
+			isa = PBXGroup;
+			children = (
+				873A15B6282D75B1007E3B38 /* CartSinglton.swift */,
+				873A15B8282D76C3007E3B38 /* ProductSinglton.swift */,
+				873A15BA282D76EF007E3B38 /* UserSinglton.swift */,
+			);
+			path = Singltons;
+			sourceTree = "<group>";
+		};
 		873D1A1727F72C000053E17D /* RequestFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +384,8 @@
 				8713209B27EDD72E0049BA3A /* SceneDelegate.swift */,
 				877AF1CD280B021F00DD24EA /* R.swift */,
 				872A7FFA2819A6C500C06FE6 /* Session.swift */,
+				873A15AC282D7140007E3B38 /* AnalyticsLogger.swift */,
+				873A15B5282D757B007E3B38 /* Singltons */,
 				87FF69E027EDED5C00CBD0D9 /* BussinessLogic */,
 				87FF69E127EDED7E00CBD0D9 /* Entity */,
 				87FF69E327EDEDB000CBD0D9 /* Flows */,
@@ -437,6 +463,9 @@
 			name = GBShop;
 			packageProductDependencies = (
 				877EADF727F07F4A006A7AD9 /* Alamofire */,
+				873A15AF282D72B9007E3B38 /* FirebaseAnalytics */,
+				873A15B1282D72B9007E3B38 /* FirebaseCrashlytics */,
+				873A15B3282D72B9007E3B38 /* FirebaseDatabase */,
 			);
 			productName = GBShop;
 			productReference = 8713209627EDD72E0049BA3A /* GBShop.app */;
@@ -512,6 +541,7 @@
 			mainGroup = 8713208D27EDD72E0049BA3A;
 			packageReferences = (
 				877EADF627F07F4A006A7AD9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				873A15AE282D72B9007E3B38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8713209727EDD72E0049BA3A /* Products */;
 			projectDirPath = "";
@@ -565,8 +595,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				873A15AD282D7140007E3B38 /* AnalyticsLogger.swift in Sources */,
 				872FD3B82815650600A4EE42 /* CatalogViewController.swift in Sources */,
 				87ED42E327F1165800980D74 /* ChangeUserPersonalData.swift in Sources */,
+				873A15B9282D76C3007E3B38 /* ProductSinglton.swift in Sources */,
 				877EAE0B27F088F2006A7AD9 /* SignUpResult.swift in Sources */,
 				877EAE0527F08467006A7AD9 /* AuthRequestFactory.swift in Sources */,
 				877EADFE27F08287006A7AD9 /* RequestRouter.swift in Sources */,
@@ -595,12 +627,14 @@
 				872FD3BE28156F8A00A4EE42 /* CatalogTableViewCell.swift in Sources */,
 				877EAE0F27F08A51006A7AD9 /* ChangeUserPersonalDataResult.swift in Sources */,
 				877EAE0027F083DF006A7AD9 /* LoginResult.swift in Sources */,
+				873A15BB282D76EF007E3B38 /* UserSinglton.swift in Sources */,
 				87A9175C28031FD8009617F7 /* ReviewRequestFactory.swift in Sources */,
 				872A7FF82819A04000C06FE6 /* ProductTableViewCell.swift in Sources */,
 				87FA011027F7B9410069C3D4 /* ProductRequestFactory.swift in Sources */,
 				870FB5C4280B3B1000F3EF71 /* SignUpViewController.swift in Sources */,
 				87FA010A27F7B6750069C3D4 /* ProductResult.swift in Sources */,
 				8713209C27EDD72E0049BA3A /* SceneDelegate.swift in Sources */,
+				873A15B7282D75B1007E3B38 /* CartSinglton.swift in Sources */,
 				87ED42DB27F113CA00980D74 /* Logout.swift in Sources */,
 				87A9176228032066009617F7 /* Review.swift in Sources */,
 				877EAE0227F083FE006A7AD9 /* User.swift in Sources */,
@@ -958,6 +992,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		873A15AE282D72B9007E3B38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		877EADF627F07F4A006A7AD9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -969,6 +1011,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		873A15AF282D72B9007E3B38 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 873A15AE282D72B9007E3B38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		873A15B1282D72B9007E3B38 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 873A15AE282D72B9007E3B38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		873A15B3282D72B9007E3B38 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 873A15AE282D72B9007E3B38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		877EADF727F07F4A006A7AD9 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 877EADF627F07F4A006A7AD9 /* XCRemoteSwiftPackageReference "Alamofire" */;

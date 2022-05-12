@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 class CartViewController: UIViewController {
     
@@ -16,6 +17,7 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableVIew.register(R.Nib.cart, forCellReuseIdentifier: R.Cell.cart)
+        AnalyticsLogger.logEvent(name: "view_cart", key: "result", value: "success")
     }
     
     @IBAction func backToMainMenuButton(_ sender: Any) {

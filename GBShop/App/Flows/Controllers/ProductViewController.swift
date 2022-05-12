@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 class ProductViewController: UIViewController {
     
@@ -16,10 +17,12 @@ class ProductViewController: UIViewController {
     
     let requestFactory = RequestFactory()
     var reviewItem: [ReviewResult] = []
+    var product: ProductResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(R.Nib.product, forCellReuseIdentifier: R.Cell.product)
+        AnalyticsLogger.logEvent(name: "catalogView", key: "result", value: "success")
     }
     
     @IBAction func backToCatalogButton(_ sender: Any) {
@@ -34,7 +37,23 @@ class ProductViewController: UIViewController {
     }
     
     @IBAction func moveProductToCartButton(_ sender: Any) {
-        
+        guard let product = product else {
+                   Crashlytics.crashlytics().log("Error. Product is nil!")
+                   return
+               }
+               print("Added to cart \(ProductSinglton.productName ?? "Error")")
+               let cartFactory = requestFactory.makeCartRequestFactory()
+               let request = CartRequest(productId: product.productId, quantity: 1)
+               cartFactory.addToCart(cart: request) { response in
+                   switch response.result {
+                   case .success:
+                       DispatchQueue.main.async {
+                           let item = CartContents(productId: product.productId, productName: product.productName, productPrice: product.price, quantity: product.quantity)
+                           CartSinglton.shared.cartItems.append(item)
+                       }
+                   case .failure(let error): print(error.localizedDescription)
+                   }
+               }
     }
     
     @IBAction func writeReviewButton(_ sender: Any) {
