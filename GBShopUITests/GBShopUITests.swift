@@ -39,4 +39,33 @@ class GBShopUITests: XCTestCase {
             }
         }
     }
+    
+    func testSuccessfulLogin() throws {
+        let app = XCUIApplication()
+        app.launch()
+        app.otherElements.buttons["Войти"].tap()
+    }
+    
+    func testFailedLogin() throws {
+        let app = XCUIApplication()
+        app.launch()
+        let element = app.otherElements
+        element.textFields["Введите пароль"].clearAndEnterText(text: "неправильный пароль")
+        app.otherElements.buttons["Войти"].tap()
+        app.alerts["Ошибка авторизации"].scrollViews.otherElements.buttons["Ок("].tap()
+    }
+}
+
+extension XCUIElement {
+    func clearAndEnterText(text: String) {
+        guard let stringValue = self.value as? String else {
+            XCTFail("Очистить и ввести текст")
+            return
+        }
+        
+        self.tap()
+        let deleteString = String(repeating: XCUIKeyboardKey.delete.rawValue, count: stringValue.count)
+        self.typeText(deleteString)
+        self.typeText(text)
+    }
 }
