@@ -26,4 +26,5 @@ struct ProductResponse: Codable {
     let price: Int?
     let description: String?
     let picUrl: String?
+    let quantity: Int?
 }

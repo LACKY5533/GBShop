@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 class ChangeUserPersonalDataViewController: UIViewController {
     
@@ -59,12 +60,14 @@ class ChangeUserPersonalDataViewController: UIViewController {
     }
     
     private func showError(_ errorMessage: String) {
+        AnalyticsLogger.logEvent(name: "Data change", key: "change_data", value: "Failture. Server error")
         let alert = UIAlertController(title: "Ошибка сервера", message: errorMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     private func showFillError() {
+        AnalyticsLogger.logEvent(name: "Data change", key: "change_data", value: "fillment error")
         let alert = UIAlertController(title: "Вы не заполнили поля", message: "Нужно заполнить все поля", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)

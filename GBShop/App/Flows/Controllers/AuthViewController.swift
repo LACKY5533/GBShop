@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 class AuthViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
@@ -34,6 +35,7 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: Any) {
+        AnalyticsLogger.logEvent(name: "login", key: "result", value: "success")
         guard let vc = R.Storyboard.SignUp.instantiateInitialViewController() else { return }
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
@@ -46,6 +48,7 @@ class AuthViewController: UIViewController {
     }
     
     private func showError(_ errorMessage: String) {
+        AnalyticsLogger.logEvent(name: "login", key: "result", value: "failture")
         let alert = UIAlertController(title: "Ошибка авторизации", message: errorMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок(", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
