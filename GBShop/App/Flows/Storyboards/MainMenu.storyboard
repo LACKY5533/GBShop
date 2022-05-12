@@ -39,14 +39,24 @@
                                     <action selector="CatalogButton:" destination="qC5-lS-LRG" eventType="touchUpInside" id="SYu-YO-dnt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEr-aO-OOy">
+                                <rect key="frame" x="313" y="64" width="81" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Корзина"/>
+                                <connections>
+                                    <action selector="CartButton:" destination="qC5-lS-LRG" eventType="touchUpInside" id="l4K-r8-AjR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FEF-9v-8m4"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FEr-aO-OOy" firstAttribute="top" secondItem="FEF-9v-8m4" secondAttribute="top" constant="20" id="44g-PX-Hyf"/>
                             <constraint firstItem="wyR-kD-Fpm" firstAttribute="centerX" secondItem="8x0-e7-fuc" secondAttribute="centerX" id="4b4-XX-TAF"/>
                             <constraint firstItem="M7i-qI-yaY" firstAttribute="top" secondItem="6ne-aK-kHw" secondAttribute="bottom" constant="20" id="MAa-59-RbT"/>
                             <constraint firstItem="wyR-kD-Fpm" firstAttribute="top" secondItem="M7i-qI-yaY" secondAttribute="bottom" constant="20" id="MbE-dG-Axl"/>
                             <constraint firstItem="M7i-qI-yaY" firstAttribute="centerX" secondItem="8x0-e7-fuc" secondAttribute="centerX" id="OjK-rZ-cyY"/>
+                            <constraint firstItem="FEF-9v-8m4" firstAttribute="trailing" secondItem="FEr-aO-OOy" secondAttribute="trailing" constant="20" id="XNW-ZK-gYl"/>
                             <constraint firstItem="6ne-aK-kHw" firstAttribute="top" secondItem="FEF-9v-8m4" secondAttribute="top" constant="300" id="h2L-V0-m45"/>
                             <constraint firstItem="6ne-aK-kHw" firstAttribute="centerX" secondItem="8x0-e7-fuc" secondAttribute="centerX" id="hTG-3q-hZy"/>
                         </constraints>

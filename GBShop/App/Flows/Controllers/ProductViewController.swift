@@ -27,6 +27,19 @@ class ProductViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
+    @IBAction func CartButoon(_ sender: Any) {
+        guard let vc = R.Storyboard.Cart.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
+    @IBAction func moveProductToCartButton(_ sender: Any) {
+        
+    }
+    
+    @IBAction func writeReviewButton(_ sender: Any) {
+        
+    }
 }
 
 extension ProductViewController: UITableViewDataSource {

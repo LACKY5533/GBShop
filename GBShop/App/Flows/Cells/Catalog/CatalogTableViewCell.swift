@@ -11,7 +11,7 @@ class CatalogTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameOfProductLabel: UILabel!
     
-    func configure(with item: CatalogResult) {
+    func configure(with item: CatalogResponse) {
         self.nameOfProductLabel.text = item.productName
     }
     
